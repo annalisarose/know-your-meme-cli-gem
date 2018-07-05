@@ -1,5 +1,7 @@
-require "know_your_meme/version"
+#environment file
 
-module KnowYourMeme
-  # Your code goes here...
-end
+require_relative "./know_your_meme/version"
+require_relative "./know_your_meme/cli"
+
+#!/usr/bin/env ruby
+require './lib/know_your_meme'
