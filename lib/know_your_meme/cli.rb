@@ -8,11 +8,7 @@ def call
 end
 
 def list_memes
-  puts "
-  1. Slender Man
-  2. Doge
-  3. ( ͡° ͜ʖ ͡°) / Lenny Face
-  "
+  @memes = KnowYourMeme::Meme.all
 end
 
 def menu
@@ -29,7 +25,7 @@ def menu
       list_memes
     else
       puts "I'm not sure what you want."
-      prompt
+      #fix this loop so it breaks when 'exit' is entered and doesn't puts this else message...
     end
   end
 end
@@ -39,7 +35,7 @@ def prompt
 end
 
 def goodbye
-  "Goodbye."
+  puts "Goodbye."
 end
 
 end
