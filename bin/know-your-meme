@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-require './lib/know_your_meme'
+require_relative '../lib/know_your_meme'
 
 KnowYourMeme::CLI.new.call

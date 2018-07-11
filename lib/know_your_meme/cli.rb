@@ -9,6 +9,7 @@ end
 
 def list_memes
   @memes = KnowYourMeme::Meme.all
+  @memes
 end
 
 def menu
