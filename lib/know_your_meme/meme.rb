@@ -13,17 +13,17 @@ class KnowYourMeme::Meme
   meme_1.about = "about"
   meme_1.origin = "origin"
   meme_1.spread = "spread"
-  meme_1_url = "url"
+  meme_1.url = "url"
 
   meme_2 = self.new
   meme_2.name = "name"
   meme_2.about = "about"
   meme_2.origin = "origin"
   meme_2.spread = "spread"
-  meme_2_url = "url"
+  meme_2.url = "url"
 
   [meme_1, meme_2]
-  
+
   end
 
 end
