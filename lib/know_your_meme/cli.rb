@@ -9,7 +9,10 @@ end
 
 def list_memes
   @memes = KnowYourMeme::Meme.all
-  @memes
+
+  memes.each.with_index(1) do |meme, index|
+    puts "#{index}. #{meme.name}"
+  end
 end
 
 def menu

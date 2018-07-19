@@ -2,6 +2,8 @@ class KnowYourMeme::Meme
   attr_accessor :name, :about, :origin, :spread, :url
 
   def self.all
+
+    @@all = []
   #  puts "
   #  1. Slender Man
   #  2. Doge
@@ -21,8 +23,6 @@ class KnowYourMeme::Meme
   meme_2.origin = "origin"
   meme_2.spread = "spread"
   meme_2.url = "url"
-
-  [meme_1, meme_2]
 
   end
 
