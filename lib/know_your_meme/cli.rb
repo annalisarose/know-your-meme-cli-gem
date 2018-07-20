@@ -15,28 +15,31 @@ def list_memes
 
   memes.each.with_index(1) do |meme, index|
    puts "#{index}. #{meme.name}"
-   binding.pry
  end
 end
 
 def menu
-  input = nil
-  while input != "exit"
+  #input = nil
     prompt
     input =  gets.strip.downcase
-    case input
-    when "1"
-      puts "More information on 1."
-    when "2"
-      puts "More information on 2."
-    when "list memes"
-      list_memes
-    when "exit"
-    else
-      puts "I'm not sure what you want."
+    index = input.to_i - 1
+
+    meme = KnowYourMeme::Meme.all[index]
+    KnowYourMeme::Scraper.scrape_meme_details(meme)
+    puts "About"
+    puts meme.about
+
+  #  case input
+  #  when "1"
+  #    puts "More information on 1."
+  #  when "2"
+  #    puts "More information on 2."
+  #  when "list memes"
+  #    list_memes
+  #  when "exit"
+  #  else
+  #    puts "I'm not sure what you want."
       #fix this loop so it breaks when 'exit' is entered and doesn't puts this else message...
-    end
-  end
 end
 
 def prompt
