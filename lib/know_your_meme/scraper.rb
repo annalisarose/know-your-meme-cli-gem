@@ -6,10 +6,15 @@ class KnowYourMeme::Scraper
     doc = Nokogiri::HTML(open(BASE_URL, 'User-Agent' => 'Chrome'))
 
     #build doc.css each do loop
-    doc.css('.entry-grid-body.infinite td')[0..3].each do |meme_entry|
+    doc.css('.entry-grid-body.infinite td')[0..7].each do |meme_entry|
         name = meme_entry.css('h2 a').text.strip
-        KnowYourMeme::Meme.new(name)
+        url = "https://knowyourmeme.com#{meme_entry.css('a:first-child').attribute('href').value}"
+        KnowYourMeme::Meme.new(name, url)
         end
+    end
+
+    def self.scrape_meme_details(meme)
+      url = meme.url
     end
 
 end

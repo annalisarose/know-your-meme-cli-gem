@@ -1,3 +1,5 @@
+require 'pry'
+
 class KnowYourMeme::CLI
 
 def call
@@ -13,6 +15,7 @@ def list_memes
 
   memes.each.with_index(1) do |meme, index|
    puts "#{index}. #{meme.name}"
+   binding.pry
  end
 end
 
