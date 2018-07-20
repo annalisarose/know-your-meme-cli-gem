@@ -8,9 +8,11 @@ def call
 end
 
 def list_memes
-  @memes = KnowYourMeme::Meme.all
 
-  memes.each.with_index(1) do |meme, index|
+  KnowYourMeme::Scraper.scrape_memes
+  #@memes = KnowYourMeme::Meme.all
+
+  #@memes.each.with_index(1) do |meme, index|
     puts "#{index}. #{meme.name}"
   end
 end
