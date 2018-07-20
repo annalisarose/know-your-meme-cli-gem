@@ -2,19 +2,18 @@ class KnowYourMeme::CLI
 
 def call
   puts "Top 50 Most Popular Memes:"
+  KnowYourMeme::Scraper.scrape_memes
   list_memes
   menu
   goodbye
 end
 
 def list_memes
+  memes = KnowYourMeme::Meme.all
 
-  KnowYourMeme::Scraper.scrape_memes
-  #@memes = KnowYourMeme::Meme.all
-
-  #@memes.each.with_index(1) do |meme, index|
-    puts "#{index}. #{meme.name}"
-  end
+  memes.each.with_index(1) do |meme, index|
+   puts "#{index}. #{meme.name}"
+ end
 end
 
 def menu
