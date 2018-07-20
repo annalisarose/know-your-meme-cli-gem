@@ -18,6 +18,8 @@ class KnowYourMeme::Scraper
       doc = Nokogiri::HTML(open(url, 'User-Agent' => 'Chrome'))
 
       meme.about = doc.css('#about + p').text.strip
+      meme.origin = doc.css('#origin + p').text.strip
+      meme.spread = doc.css('#spread + p').text.strip
     end
 
 end

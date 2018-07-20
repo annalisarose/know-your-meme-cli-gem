@@ -28,6 +28,10 @@ def menu
     KnowYourMeme::Scraper.scrape_meme_details(meme)
     puts "About"
     puts meme.about
+    puts "Origin"
+    puts meme.origin
+    puts "Spread"
+    puts meme.spread
 
   #  case input
   #  when "1"
