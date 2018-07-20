@@ -6,7 +6,7 @@ class KnowYourMeme::Scraper
     doc = Nokogiri::HTML(open(BASE_URL, 'User-Agent' => 'Chrome'))
 
     #build doc.css each do loop
-    doc.css('.entry-grid-body.infinite tr')[0..3].each do |meme_entry|
+    doc.css('.entry-grid-body.infinite td')[0..3].each do |meme_entry|
         name = meme_entry.css('h2 a').text.strip
         KnowYourMeme::Meme.new(name)
         end

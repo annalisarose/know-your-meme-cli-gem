@@ -28,6 +28,7 @@ def menu
       puts "More information on 2."
     when "list memes"
       list_memes
+    when "exit"
     else
       puts "I'm not sure what you want."
       #fix this loop so it breaks when 'exit' is entered and doesn't puts this else message...
