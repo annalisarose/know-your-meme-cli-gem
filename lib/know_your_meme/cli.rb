@@ -5,26 +5,29 @@ class KnowYourMeme::CLI
 def call
   puts "Top 50 Most Popular Memes:"
   KnowYourMeme::Scraper.scrape_memes
+  start
+end
+
+def start
   list_memes
-  menu
-  goodbye
+  prompt
+  print_meme
 end
 
 def list_memes
   memes = KnowYourMeme::Meme.all
-
   memes.each.with_index(1) do |meme, index|
    puts "#{index}. #{meme.name}"
  end
 end
 
-def menu
-  #input = nil
-    prompt
-    input =  gets.strip.downcase
-    index = input.to_i - 1
+def prompt
+  puts "Enter the number of the meme on which you'd like more information, enter 'list memes' to list memes, or enter 'exit' to exit program."
+end
 
-#put in dif method
+def print_meme
+  input =  gets.strip.downcase
+  index = input.to_i - 1
     meme = KnowYourMeme::Meme.all[index]
     KnowYourMeme::Scraper.scrape_meme_details(meme)
     puts ""
@@ -36,26 +39,10 @@ def menu
     puts ""
     puts "Spread"
     puts meme.spread
-
-  #  case input
-  #  when "1"
-  #    puts "More information on 1."
-  #  when "2"
-  #    puts "More information on 2."
-  #  when "list memes"
-  #    list_memes
-  #  when "exit"
-  #  else
-  #    puts "I'm not sure what you want."
-      #fix this loop so it breaks when 'exit' is entered and doesn't puts this else message...
-end
+  end
 
 def exit
   exit
-end
-
-def prompt
-  puts "Enter the number of the meme on which you'd like more information, or enter 'list memes' to list memes, or enter 'exit' to exit program."
 end
 
 def goodbye
