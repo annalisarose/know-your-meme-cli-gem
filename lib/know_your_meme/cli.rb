@@ -24,12 +24,16 @@ def menu
     input =  gets.strip.downcase
     index = input.to_i - 1
 
+#put in dif method
     meme = KnowYourMeme::Meme.all[index]
     KnowYourMeme::Scraper.scrape_meme_details(meme)
+    puts ""
     puts "About"
     puts meme.about
+    puts ""
     puts "Origin"
     puts meme.origin
+    puts ""
     puts "Spread"
     puts meme.spread
 
@@ -44,6 +48,10 @@ def menu
   #  else
   #    puts "I'm not sure what you want."
       #fix this loop so it breaks when 'exit' is entered and doesn't puts this else message...
+end
+
+def exit
+  exit
 end
 
 def prompt
