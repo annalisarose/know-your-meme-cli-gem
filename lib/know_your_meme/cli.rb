@@ -8,21 +8,20 @@ def call
   puts "Top 8 Most Popular Memes:"
   KnowYourMeme::Scraper.scrape_memes
   menu
+  exit
 end
 
 def menu
   list_memes
   prompt
   get_input
-  exit
 end
 
 def list_memes
   memes = KnowYourMeme::Meme.all
-
   memes.each.with_index(1) do |meme, index|
    puts "#{index}. #{meme.name}"
- end
+  end
 end
 
 def prompt
@@ -60,7 +59,7 @@ def get_input
 
     elsif input == "exit"
       puts ""
-      goodbye
+      puts "Goodbye."
 
     elsif input == "list memes"
       puts ""
@@ -73,10 +72,6 @@ def get_input
       reset
     end
 
-end
-
-def goodbye
-  puts "Goodbye."
 end
 
 end
