@@ -11,7 +11,7 @@ def menu
   list_memes
   prompt
   get_input
-  goodbye
+  exit
 end
 
 def list_memes
@@ -29,26 +29,42 @@ def prompt
 end
 
 def get_input
+
     input =  gets.strip.downcase
-    index = input.to_i - 1
 
-    meme = KnowYourMeme::Meme.all[index]
-    KnowYourMeme::Scraper.scrape_meme_details(meme)
-    puts ""
-    puts meme.name
-    puts ""
-    puts "About"
-    puts meme.about
-    puts ""
-    puts "Origin"
-    puts meme.origin
-    puts ""
-    puts "Spread"
-    puts meme.spread
-  end
+    if input != "exit"
+      index = input.to_i - 1
 
-def exit
-  exit
+      meme = KnowYourMeme::Meme.all[index]
+      KnowYourMeme::Scraper.scrape_meme_details(meme)
+      puts ""
+      puts meme.name
+      puts ""
+      puts "About"
+      puts meme.about
+      puts ""
+      puts "Origin"
+      puts meme.origin
+      puts ""
+      puts "Spread"
+      puts meme.spread
+      puts ""
+      prompt
+      get_input
+
+    elsif input == "exit"
+      goodbye
+
+    elsif input == "list memes"
+      list_memes
+      prompt
+      get_input
+
+    else
+      puts "I'm not sure what you want."
+      prompt
+      get_input
+    end
 end
 
 def goodbye
