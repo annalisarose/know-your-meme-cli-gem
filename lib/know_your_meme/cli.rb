@@ -34,8 +34,17 @@ def get_input
 
     meme = KnowYourMeme::Meme.all[index]
     KnowYourMeme::Scraper.scrape_meme_details(meme)
+    puts ""
+    puts meme.name
+    puts ""
     puts "About"
     puts meme.about
+    puts ""
+    puts "Origin"
+    puts meme.origin
+    puts ""
+    puts "Spread"
+    puts meme.spread
   end
 
 def exit
