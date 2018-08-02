@@ -4,6 +4,7 @@ class KnowYourMeme::CLI
 
 def call
   puts "Welcome to the Know Your Meme CLI."
+  puts ""
   puts "Top 8 Most Popular Memes:"
   KnowYourMeme::Scraper.scrape_memes
   menu
@@ -25,11 +26,11 @@ def list_memes
 end
 
 def prompt
+  puts ""
   puts "Enter the number of the meme on which you'd like more information, or enter 'list memes' to list memes, or enter 'exit' to exit program."
 end
 
 def reset
-  puts ""
   prompt
   get_input
 end
