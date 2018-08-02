@@ -19,5 +19,4 @@ class KnowYourMeme::Scraper
       meme.origin = doc.css('#origin + p').text.strip
       meme.spread = doc.css('#spread + p').text.strip
     end
-
 end

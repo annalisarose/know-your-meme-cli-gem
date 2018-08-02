@@ -3,9 +3,12 @@ class KnowYourMeme::Meme
 
     @@all = []
 
-    def initialize(name, url)
+    def initialize(name, url, about = nil, origin = nil, spread = nil)
       @name = name
       @url = url
+      @about = about
+      @origin = origin
+      @spread = spread
       @@all << self
     end
 

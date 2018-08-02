@@ -24,6 +24,10 @@ def list_memes
  end
 end
 
+def prompt
+  puts "Enter the number of the meme on which you'd like more information, or enter 'list memes' to list memes, or enter 'exit' to exit program."
+end
+
 def get_input
     input =  gets.strip.downcase
     index = input.to_i - 1
@@ -32,10 +36,6 @@ def get_input
     KnowYourMeme::Scraper.scrape_meme_details(meme)
     puts "About"
     puts meme.about
-  end
-
-  def prompt
-    puts "Enter the number of the meme on which you'd like more information, or enter 'list memes' to list memes, or enter 'exit' to exit program."
   end
 
 def exit
