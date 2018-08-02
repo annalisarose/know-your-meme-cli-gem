@@ -1,11 +1,10 @@
-require 'pry'
-
 class KnowYourMeme::CLI
 
 def call
-  puts "Welcome to the Know Your Meme CLI."
   puts ""
-  puts "Top 8 Most Popular Memes:"
+  puts "Welcome to the Know Your Meme CLI."
+  puts "I retrieve stats on the top 8 entries from knowyourmeme.com's 'Popular' page."
+  puts ""
   KnowYourMeme::Scraper.scrape_memes
   menu
   exit
@@ -18,6 +17,8 @@ def menu
 end
 
 def list_memes
+  puts "Top 8 Most Popular Memes:"
+  puts ""
   memes = KnowYourMeme::Meme.all
   memes.each.with_index(1) do |meme, index|
    puts "#{index}. #{meme.name}"
