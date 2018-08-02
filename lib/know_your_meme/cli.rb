@@ -3,7 +3,11 @@ require 'pry'
 class KnowYourMeme::CLI
 
 def call
-  puts "Top 8 Most Popular Memes:"
+  puts "Welcome to the Know Your Meme CLI."
+  menu
+end
+
+def menu
   list_memes
   prompt
   get_input
@@ -11,6 +15,7 @@ def call
 end
 
 def list_memes
+  puts "Top 8 Most Popular Memes:"
   KnowYourMeme::Scraper.scrape_memes
   memes = KnowYourMeme::Meme.all
 
