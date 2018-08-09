@@ -6,12 +6,11 @@ require "know_your_meme/version"
 Gem::Specification.new do |spec|
   spec.name          = "know_your_meme"
   spec.version       = KnowYourMeme::VERSION
-  spec.authors       = ["Annalisa"]
+  spec.authors       = ["Annalisa Graziano"]
   spec.email         = ["arosegraz@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{TODO: Retrieves retrieve stats on the top 8 entries from knowyourmeme.com's 'Popular' page.}
+  spec.homepage      = "https://github.com/annalisarose/know-your-meme-cli-gem"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -36,5 +35,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", ">= 0"
   spec.add_development_dependency "nokogiri", ">= 0"
-  spec.add_development_dependency "pry", ">= 0"
 end
