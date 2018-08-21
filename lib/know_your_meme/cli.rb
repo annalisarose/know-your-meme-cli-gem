@@ -19,8 +19,7 @@ end
 def list_memes
   puts "Top 8 Most Popular Memes:"
   puts ""
-  memes = KnowYourMeme::Meme.all
-  memes.each.with_index(1) do |meme, index|
+  KnowYourMeme::Meme.all.each.with_index(1) do |meme, index|
    puts "#{index}. #{meme.name}"
   end
 end
@@ -39,11 +38,14 @@ def get_input
 
     input =  gets.strip.downcase
 
-    if input.to_i > 0
+    if input.to_i > 0 && input.to_i <= KnowYourMeme::Meme.all.length
       index = input.to_i - 1
 
       meme = KnowYourMeme::Meme.all[index]
-      KnowYourMeme::Scraper.scrape_meme_details(meme)
+
+      if meme.about == nil
+        KnowYourMeme::Scraper.scrape_meme_details(meme)
+      end
 
       puts ""
       puts meme.name

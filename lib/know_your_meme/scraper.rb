@@ -14,6 +14,7 @@ class KnowYourMeme::Scraper
 
   def self.scrape_meme_details(meme)
       url = meme.url
+      puts "*********Scraping******"
       doc = Nokogiri::HTML(open(url, 'User-Agent' => 'Chrome'))
       meme.about = doc.css('#about + p').text.strip
       meme.spread = doc.css('#spread + p').text.strip
